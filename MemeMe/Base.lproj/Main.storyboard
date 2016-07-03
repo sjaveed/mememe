@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9j-Iu-i9J">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="iRq-Fj-JcH"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="KJv-bI-ft0">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="JCz-dR-LbQ"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fe-qa-gjo">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ciS-WW-Wdw"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="die-CS-ueO"/>
+                                    <barButtonItem systemItem="camera" id="4jz-TI-mwS"/>
+                                    <barButtonItem title="Photo Album" id="x9Z-lm-4MI"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EuI-aH-mcU"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DTU-Js-k10">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dmW-1h-Bcb">
+                                <rect key="frame" x="252" y="112" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y2q-5v-DdM">
+                                <rect key="frame" x="252" y="458" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dmW-1h-Bcb" firstAttribute="top" secondItem="Y9j-Iu-i9J" secondAttribute="bottom" constant="48" id="1gK-HE-cu8"/>
+                            <constraint firstItem="5fe-qa-gjo" firstAttribute="top" secondItem="DTU-Js-k10" secondAttribute="bottom" id="26D-eB-lmL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DTU-Js-k10" secondAttribute="trailing" id="AFt-zs-9Q8"/>
+                            <constraint firstItem="DTU-Js-k10" firstAttribute="top" secondItem="Y9j-Iu-i9J" secondAttribute="bottom" id="FNd-8v-0Y8"/>
+                            <constraint firstItem="5fe-qa-gjo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="KAJ-L2-JHD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5fe-qa-gjo" secondAttribute="bottom" id="Lba-Fu-OQ4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5fe-qa-gjo" secondAttribute="trailing" constant="-20" id="M63-hP-caL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dmW-1h-Bcb" secondAttribute="trailing" id="Wip-6a-IWr"/>
+                            <constraint firstItem="Y9j-Iu-i9J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Y8p-Xh-cvI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y2q-5v-DdM" secondAttribute="trailing" id="Zb3-Ci-7fK"/>
+                            <constraint firstItem="DTU-Js-k10" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fwH-FE-De1"/>
+                            <constraint firstItem="5fe-qa-gjo" firstAttribute="top" secondItem="y2q-5v-DdM" secondAttribute="bottom" constant="50" id="hlY-pB-j8v"/>
+                            <constraint firstItem="Y9j-Iu-i9J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="kRp-EO-ZZu"/>
+                            <constraint firstItem="y2q-5v-DdM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lKg-Xe-N2p"/>
+                            <constraint firstItem="dmW-1h-Bcb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ltk-S9-T4L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y9j-Iu-i9J" secondAttribute="trailing" constant="-20" id="zcR-KC-6Ec"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="700" y="549"/>
         </scene>
     </scenes>
 </document>
