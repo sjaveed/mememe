@@ -25,7 +25,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Title" id="KJv-bI-ft0">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="JCz-dR-LbQ"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="JCz-dR-LbQ">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="wcs-Uv-4Zs"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -36,8 +40,16 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="die-CS-ueO"/>
-                                    <barButtonItem systemItem="camera" id="4jz-TI-mwS"/>
-                                    <barButtonItem title="Photo Album" id="x9Z-lm-4MI"/>
+                                    <barButtonItem systemItem="camera" id="4jz-TI-mwS">
+                                        <connections>
+                                            <action selector="takePhoto:" destination="BYZ-38-t0r" id="QUK-fe-uJv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Photo Album" id="x9Z-lm-4MI">
+                                        <connections>
+                                            <action selector="choosePhoto:" destination="BYZ-38-t0r" id="OiJ-60-QH3"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EuI-aH-mcU"/>
                                 </items>
                             </toolbar>
@@ -75,6 +87,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Y9j-Iu-i9J" secondAttribute="trailing" constant="-20" id="zcR-KC-6Ec"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomCaption" destination="y2q-5v-DdM" id="hMz-SQ-hUM"/>
+                        <outlet property="cameraButton" destination="4jz-TI-mwS" id="PLf-wA-2m6"/>
+                        <outlet property="imageView" destination="DTU-Js-k10" id="KYL-qy-BPq"/>
+                        <outlet property="navbar" destination="Y9j-Iu-i9J" id="qBt-st-vle"/>
+                        <outlet property="shareButton" destination="JCz-dR-LbQ" id="wpj-R9-xPi"/>
+                        <outlet property="toolbar" destination="5fe-qa-gjo" id="5v1-hC-aK6"/>
+                        <outlet property="topCaption" destination="dmW-1h-Bcb" id="WGx-7J-hVS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
