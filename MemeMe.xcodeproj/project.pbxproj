@@ -15,6 +15,7 @@
 		3125992A1D29A90B00535EF4 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312599291D29A90B00535EF4 /* MemeMeTests.swift */; };
 		312599351D29A90B00535EF4 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312599341D29A90B00535EF4 /* MemeMeUITests.swift */; };
 		312599451D29C85400535EF4 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312599441D29C85400535EF4 /* Meme.swift */; };
+		312599471D29DD1500535EF4 /* MemeGenerator_180 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 312599461D29DD1500535EF4 /* MemeGenerator_180 copy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		312599341D29A90B00535EF4 /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		312599361D29A90B00535EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		312599441D29C85400535EF4 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		312599461D29DD1500535EF4 /* MemeGenerator_180 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MemeGenerator_180 copy.png"; path = "../../../../../Downloads/MemeMe_assets-2/MemeGenerator_180 copy.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		312599131D29A90A00535EF4 /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				312599461D29DD1500535EF4 /* MemeGenerator_180 copy.png */,
 				312599141D29A90A00535EF4 /* AppDelegate.swift */,
 				312599161D29A90A00535EF4 /* ViewController.swift */,
 				312599181D29A90A00535EF4 /* Main.storyboard */,
@@ -235,6 +238,7 @@
 				3125991F1D29A90A00535EF4 /* LaunchScreen.storyboard in Resources */,
 				3125991C1D29A90A00535EF4 /* Assets.xcassets in Resources */,
 				3125991A1D29A90A00535EF4 /* Main.storyboard in Resources */,
+				312599471D29DD1500535EF4 /* MemeGenerator_180 copy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +492,7 @@
 				3125993B1D29A90B00535EF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3125993C1D29A90B00535EF4 /* Build configuration list for PBXNativeTarget "MemeMeTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				3125993E1D29A90B00535EF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3125993F1D29A90B00535EF4 /* Build configuration list for PBXNativeTarget "MemeMeUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				312599411D29A90B00535EF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
