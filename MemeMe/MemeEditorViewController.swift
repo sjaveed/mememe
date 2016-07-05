@@ -69,10 +69,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     // Notification Starts: Keyboard
     func keyboardWillShow(notification: NSNotification) {
-        if topCaption.isFirstResponder() {
-            resetFrame()
-        } else {
+        if bottomCaption.isFirstResponder() {
             view.frame.origin.y = -keyboardSize(notification)
+        } else {
+            resetFrame()
         }
     }
     
