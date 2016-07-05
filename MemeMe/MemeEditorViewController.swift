@@ -1,24 +1,23 @@
 //
-//  ViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe
 //
-//  Created by Shahbaz Javeed on 7/3/16.
+//  Created by Shahbaz Javeed on 7/4/16.
 //  Copyright © 2016 Shahbaz Javeed. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topCaption: UITextField!
     @IBOutlet weak var bottomCaption: UITextField!
+
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
 
     @IBOutlet weak var navbar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
-
-    var activeField: UITextField?
     
     @IBAction func takePhoto(sender: AnyObject) {
         showImagePicker(.Camera)
@@ -29,8 +28,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func shareMeme(sender: AnyObject) {
-        let meme = saveMeme()
-        let activityController = UIActivityViewController.init(activityItems: [meme.compositeImage], applicationActivities: nil)
+        let activityController = UIActivityViewController.init(activityItems: [compositeMeme()], applicationActivities: nil)
+
+        activityController.popoverPresentationController?.sourceView = view
+        activityController.completionWithItemsHandler =  { activityType, completed, returnedItems, activityError in
+            self.saveMeme()
+        }
         
         presentViewController(activityController, animated: true, completion: nil)
     }
@@ -49,11 +52,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // Protocol Starts: UITextFieldDelegate
     func textFieldDidBeginEditing(textField: UITextField) {
-        activeField = textField
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        activeField = nil
+        var shouldClearField = textField == topCaption && textField.text == "TOP"
+        shouldClearField = shouldClearField || (textField == bottomCaption && textField.text == "BOTTOM")
+        
+        if shouldClearField {
+            textField.text = ""
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -65,15 +69,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // Notification Starts: Keyboard
     func keyboardWillShow(notification: NSNotification) {
-        if let fieldBeingEdited = activeField {
-            if fieldBeingEdited == bottomCaption {
-                self.view.frame.origin.y -= keyboardSize(notification)
-            }
+        if topCaption.isFirstResponder() {
+            resetFrame()
+        } else {
+            view.frame.origin.y = -keyboardSize(notification)
         }
     }
     
     func keyboardWillHide(info: NSNotification) {
-        self.view.frame.origin.y = 0
+        resetFrame()
     }
     // Notification Ends
     
@@ -100,6 +104,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private
     
+    func resetFrame() {
+        view.frame.origin.y = 0
+    }
+    
     func saveMeme() -> Meme {
         return Meme(topCaption: topCaption.text!, bottomCaption: bottomCaption.text!, chosenImage: imageView.image!, compositeImage: compositeMeme())
     }
@@ -108,9 +116,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         navbar.hidden = true
         toolbar.hidden = true
         
-        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIGraphicsBeginImageContext(view.frame.size)
         
-        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let compositeImage = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
@@ -166,4 +174,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         field.delegate = self
     }
 }
-

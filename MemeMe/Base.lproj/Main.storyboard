@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -88,13 +88,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomCaption" destination="y2q-5v-DdM" id="hMz-SQ-hUM"/>
-                        <outlet property="cameraButton" destination="4jz-TI-mwS" id="PLf-wA-2m6"/>
-                        <outlet property="imageView" destination="DTU-Js-k10" id="KYL-qy-BPq"/>
-                        <outlet property="navbar" destination="Y9j-Iu-i9J" id="qBt-st-vle"/>
-                        <outlet property="shareButton" destination="JCz-dR-LbQ" id="wpj-R9-xPi"/>
-                        <outlet property="toolbar" destination="5fe-qa-gjo" id="5v1-hC-aK6"/>
-                        <outlet property="topCaption" destination="dmW-1h-Bcb" id="WGx-7J-hVS"/>
+                        <outlet property="bottomCaption" destination="y2q-5v-DdM" id="WEU-2w-BkK"/>
+                        <outlet property="cameraButton" destination="4jz-TI-mwS" id="TdC-2O-zur"/>
+                        <outlet property="imageView" destination="DTU-Js-k10" id="lkf-Pq-JF7"/>
+                        <outlet property="navbar" destination="Y9j-Iu-i9J" id="0RL-Xf-ly1"/>
+                        <outlet property="shareButton" destination="JCz-dR-LbQ" id="ybi-Q4-ytF"/>
+                        <outlet property="toolbar" destination="5fe-qa-gjo" id="S5U-g0-VqZ"/>
+                        <outlet property="topCaption" destination="dmW-1h-Bcb" id="wcm-nP-50Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
